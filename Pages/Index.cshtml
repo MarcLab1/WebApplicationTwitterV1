@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "WebApplicationTwitterV1";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <br>
+        <hr />
+        <form method="post">
+
+            <p><label for="EmpName">Twitter Name:  </label> <input type="text" id="name" name="name" /> </p>
+            <p><input type="submit" /></p>
+        </form>
+        <hr />
+
+        @{
+            TwitterUser user = ViewData["Name"] as TwitterUser;
+
+            if (user != null)
+            {
+                <p>Twitter user name: @user.Name</p>
+                <p>
+                    Twitter user Id: @user.Id
+                </p>
+                <p>
+                    Number of Friends: @user.NumFriends
+                </p>
+                <p>
+                    Number of Users Following: @user.NumFollowers
+                </p>
+            }
+        }
+    </div>
+</div>
